@@ -75,19 +75,8 @@
     flex-wrap:wrap;
   }
   .brand{ display:flex; align-items:center; gap:var(--space-3); }
-  .brand-mark{
-    width:52px; height:52px; border-radius:var(--radius-sm);
-    background:linear-gradient(135deg, var(--accent) 0%, var(--accent) 50%, var(--brand-blue) 50%, var(--brand-blue) 100%);
-    color:#fff;
-    display:flex; align-items:center; justify-content:center;
-    font-weight:700; font-size:18px; letter-spacing:1px;
-    text-shadow:0 1px 2px rgba(0,0,0,0.25);
-  }
-  .brand-name{ font-weight:600; font-size:16px; line-height:1.3; color:var(--text); }
-  .brand-name .brand-wordmark{ display:block; font-weight:700; font-size:14px; letter-spacing:0.5px; }
-  .brand-name .brand-wordmark .w-sago{ color:var(--accent); }
-  .brand-name .brand-wordmark .w-chem{ color:var(--brand-blue); }
-  .brand-name .brand-tagline{ display:block; font-weight:400; font-size:11px; color:var(--brand-blue); letter-spacing:0.3px; }
+  .brand-logo{ height:44px; width:auto; display:block; }
+  .brand-name{ font-weight:600; font-size:14px; line-height:1.3; color:var(--text-muted); }
   .hotline-cta{
     display:flex; align-items:center; gap:var(--space-2);
     background:var(--accent); color:#fff;
@@ -392,12 +381,8 @@
   <header class="site">
     <div class="wrap">
       <div class="brand">
-        <div class="brand-mark">SG</div>
-        <div class="brand-name">
-          Công ty Cổ phần Công nghiệp Hóa chất Sài Gòn
-          <span class="brand-wordmark"><span class="w-sago">SAGO</span><span class="w-chem">CHEM</span></span>
-          <span class="brand-tagline">Sustainable Chemistry &amp; Innovation</span>
-        </div>
+        <img src="img/logo-sagochem.webp" alt="SAGOCHEM — Sustainable Chemistry &amp; Innovation" class="brand-logo">
+        <div class="brand-name">Công ty Cổ phần Công nghiệp Hóa chất Sài Gòn</div>
       </div>
       <a class="hotline-cta" href="tel:0949691556">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
