@@ -159,6 +159,28 @@
   .section-head h2{ font-size:21px; font-weight:600; color:var(--text); display:inline-block; padding-bottom:var(--space-2); border-bottom:3px solid var(--accent); }
   .section-head p{ margin-top:var(--space-3); color:var(--text-muted); max-width:70ch; }
 
+  /* Featured products — real photos from sagochem.com, 1:1 thumbnail ratio */
+  .grid-featured{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    gap:var(--space-4);
+  }
+  .card-featured{
+    background:#fff;
+    border-radius:var(--radius-card);
+    box-shadow:var(--shadow-card);
+    overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .card-featured .photo{
+    aspect-ratio:1/1;
+    background:var(--section-alt-2);
+    overflow:hidden;
+  }
+  .card-featured .photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .card-featured .card-body{ padding:var(--space-3) var(--space-4) var(--space-4); display:flex; flex-direction:column; gap:var(--space-2); flex:1; }
+  .card-featured h3{ font-size:14px; font-weight:600; color:var(--text); line-height:1.35; min-height:38px; }
+
   /* Product cards — one repeating card shape (system trade-off) */
   .grid-products{
     display:grid;
@@ -413,7 +435,83 @@
     </div>
   </section>
 
-  <section class="section" id="san-pham">
+  <section class="section" id="tieu-bieu">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Sản phẩm tiêu biểu</h2>
+        <p>Một số mặt hàng thực tế Sagochem đang cung cấp — xem đầy đủ danh mục tại <a href="https://sagochem.com/danh-muc/san-pham/" target="_blank" rel="noopener" style="color:var(--brand-blue);text-decoration:underline;">sagochem.com</a>.</p>
+      </div>
+      <div class="grid-featured">
+
+        <div class="card-featured">
+          <div class="photo"><img src="img/featured/zeolite-13x.webp" alt="Zeolite 13X" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Zeolite 13X</h3>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card-featured">
+          <div class="photo"><img src="img/featured/beta-cyclodextrin.webp" alt="Beta Cyclodextrin" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Beta Cyclodextrin</h3>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card-featured">
+          <div class="photo"><img src="img/featured/ethanol-99.webp" alt="Etanol 99,9%" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Etanol 99,9% (Ethanol 99.9%)</h3>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card-featured">
+          <div class="photo"><img src="img/featured/glucose-syrup.webp" alt="Glucose Syrup" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Glucose Syrup</h3>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card-featured">
+          <div class="photo"><img src="img/featured/nonyl-phenol-np4.webp" alt="Nonyl Phenol Ethoxylate 4 Moles (NP4)" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Nonyl Phenol Ethoxylate 4 Moles (NP4)</h3>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card-featured">
+          <div class="photo"><img src="img/featured/sorbitol-syrup-70.webp" alt="Sorbitol Syrup 70%" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Sorbitol Syrup 70%</h3>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card-featured">
+          <div class="photo"><img src="img/featured/xuc-tac-niken-raney.webp" alt="Xúc tác Niken Raney 3111" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Xúc tác Niken Raney 3111</h3>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card-featured">
+          <div class="photo"><img src="img/featured/acid-oleic.webp" alt="Acid Oleic – Axit Oleic" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Acid Oleic – Axit Oleic</h3>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt2" id="san-pham">
     <div class="wrap">
       <div class="section-head">
         <h2>Sản phẩm của chúng tôi</h2>
