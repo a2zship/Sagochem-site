@@ -159,10 +159,11 @@
   .section-head h2{ font-size:21px; font-weight:600; color:var(--text); display:inline-block; padding-bottom:var(--space-2); border-bottom:3px solid var(--accent); }
   .section-head p{ margin-top:var(--space-3); color:var(--text-muted); max-width:70ch; }
 
-  /* Featured products — real photos from sagochem.com, 1:1 thumbnail ratio */
+  /* Featured products — real photos from sagochem.com, 1:1 thumbnail ratio.
+     Fixed 4-column grid (not auto-fit) so 8 items always fill 2 even rows. */
   .grid-featured{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns:repeat(4, 1fr);
     gap:var(--space-4);
   }
   .card-featured{
@@ -172,7 +173,9 @@
     overflow:hidden;
     display:flex; flex-direction:column;
   }
+  .card-featured.highlight{ border:2px solid var(--accent); }
   .card-featured .photo{
+    position:relative;
     aspect-ratio:1/1;
     background:var(--section-alt-2);
     overflow:hidden;
@@ -180,6 +183,13 @@
   .card-featured .photo img{ width:100%; height:100%; object-fit:cover; display:block; }
   .card-featured .card-body{ padding:var(--space-3) var(--space-4) var(--space-4); display:flex; flex-direction:column; gap:var(--space-2); flex:1; }
   .card-featured h3{ font-size:14px; font-weight:600; color:var(--text); line-height:1.35; min-height:38px; }
+
+  @media (max-width: 960px){
+    .grid-featured{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width: 480px){
+    .grid-featured{ grid-template-columns:1fr; }
+  }
 
   /* Product cards — one repeating card shape (system trade-off) */
   .grid-products{
@@ -435,7 +445,7 @@
     </div>
   </section>
 
-  <section class="section" id="tieu-bieu">
+  <section class="section" id="san-pham">
     <div class="wrap">
       <div class="section-head">
         <h2>Sản phẩm tiêu biểu</h2>
@@ -483,8 +493,8 @@
           </div>
         </div>
 
-        <div class="card-featured">
-          <div class="photo"><img src="img/featured/sorbitol-syrup-70.webp" alt="Sorbitol Syrup 70%" loading="lazy"></div>
+        <div class="card-featured highlight" id="sorbitol">
+          <div class="photo"><span class="ribbon">Sản phẩm chủ lực</span><img src="img/featured/sorbitol-syrup-70.webp" alt="Sorbitol Syrup 70%" loading="lazy"></div>
           <div class="card-body">
             <h3>Sorbitol Syrup 70%</h3>
             <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
@@ -503,85 +513,6 @@
           <div class="photo"><img src="img/featured/acid-oleic.webp" alt="Acid Oleic – Axit Oleic" loading="lazy"></div>
           <div class="card-body">
             <h3>Acid Oleic – Axit Oleic</h3>
-            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt2" id="san-pham">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Sản phẩm của chúng tôi</h2>
-        <p>Mỗi nhóm hàng đi kèm tư vấn nồng độ, quy cách đóng gói và điều kiện vận chuyển phù hợp với ngành sử dụng.</p>
-      </div>
-      <div class="grid-products">
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6M10 2v6.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V2"/><path d="M7 15h10"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Xút (NaOH)</h3>
-            <p>Dạng lỏng và rắn, nồng độ 32% - 45% - 50%, phục vụ dệt nhuộm, giấy, xử lý nước và sản xuất hóa chất sau.</p>
-            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="13" r="8"/><path d="M12 5V3M9 3h6"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Axit Clohydric &amp; Sunfuric</h3>
-            <p>HCl và H2SO4 công nghiệp, dùng trong xử lý bề mặt, trung hòa nước thải và sản xuất hóa chất.</p>
-            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 12a8 4 0 0 0 16 0M4 12a8 4 0 0 1 16 0"/><path d="M4 6a8 4 0 0 0 16 0"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>PAC &amp; Phèn đơn</h3>
-            <p>Chất keo tụ cho xử lý nước cấp, nước thải sinh hoạt và công nghiệp, ổn định độ đục nhanh.</p>
-            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C9 6 6 9.5 6 13a6 6 0 0 0 12 0c0-3.5-3-7-6-11z"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Clo lỏng &amp; Javel</h3>
-            <p>Giải pháp khử trùng cho nhà máy nước, hồ bơi và xử lý nước thải, nồng độ theo yêu cầu.</p>
-            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
-          </div>
-        </div>
-
-        <div class="card highlight" id="sorbitol" style="position:relative;">
-          <div class="card-icon">
-            <span class="ribbon">Nhóm thực phẩm - dược</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-4-3-8-6.5-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 4.5-4 8-8 11z"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Sorbitol</h3>
-            <p>Dạng lỏng (70%) và bột, dùng làm chất tạo ngọt, giữ ẩm trong thực phẩm, bánh kẹo, kem đánh răng và dược phẩm.</p>
-            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19V9l4-4 4 4v10M14 19v-6h4v6"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Phụ gia thực phẩm khác</h3>
-            <p>Danh mục phụ gia đi kèm Sorbitol theo yêu cầu nhà máy chế biến thực phẩm và dược phẩm.</p>
             <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
           </div>
         </div>
