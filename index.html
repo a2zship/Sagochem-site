@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sagochem - Công ty Cổ phần Công nghiệp Hóa chất Sài Gòn</title>
+<meta name="description" content="Sagochem cung cấp hóa chất công nghiệp cơ bản (Xút, Axit, PAC, Phèn, Clo lỏng/Javel) và Sorbitol, phụ gia thực phẩm - dược phẩm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Niramit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#F7941D;
+    --accent-dark:#DD7C0A;
+    --brand-blue:#0072BC;
+    --brand-blue-dark:#00588F;
+    --bg:#FFFFFF;
+    --page-wash:#F2F2F2;
+    --section-alt:#EEEEEE;
+    --section-alt-2:#F6F6F6;
+    --footer-bg:#122A3D;
+    --hero-bg:#0E2E48;
+    --text:#333333;
+    --text-muted:#5C5C5C;
+    --text-muted-2:#7F7F7F;
+    --radius-sm:4px;
+    --radius-card:10px;
+    --shadow-flat:0px 1px 2px 1px rgba(0,0,0,0.12);
+    --shadow-card:0px 5px 25px 0px rgba(0,0,0,0.15);
+    --space-1:5px;
+    --space-2:10px;
+    --space-3:15px;
+    --space-4:20px;
+    --space-5:30px;
+    --space-6:40px;
+    --container:1170px;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Niramit', Helvetica, Arial, sans-serif;
+    color:var(--text);
+    background:var(--page-wash);
+    line-height:1.45;
+    font-size:15px;
+  }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  img,svg{ display:block; max-width:100%; }
+  .wrap{ max-width:var(--container); margin:0 auto; padding:0 var(--space-4); }
+
+  /* Top contact bar — accent broadcast, contact-urgency principle */
+  .topbar{
+    background:var(--accent);
+    color:#fff;
+    font-size:13px;
+    padding:var(--space-1) 0;
+  }
+  .topbar .wrap{ display:flex; justify-content:space-between; align-items:center; gap:var(--space-3); flex-wrap:wrap; }
+  .topbar a{ opacity:0.95; }
+  .topbar a:hover{ text-decoration:underline; }
+
+  /* Header */
+  header.site{
+    background:#fff;
+    box-shadow:var(--shadow-flat);
+  }
+  header.site .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:var(--space-4);
+    padding-bottom:var(--space-4);
+    gap:var(--space-4);
+    flex-wrap:wrap;
+  }
+  .brand{ display:flex; align-items:center; gap:var(--space-3); }
+  .brand-mark{
+    width:52px; height:52px; border-radius:var(--radius-sm);
+    background:linear-gradient(135deg, var(--accent) 0%, var(--accent) 50%, var(--brand-blue) 50%, var(--brand-blue) 100%);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:18px; letter-spacing:1px;
+    text-shadow:0 1px 2px rgba(0,0,0,0.25);
+  }
+  .brand-name{ font-weight:600; font-size:16px; line-height:1.3; color:var(--text); }
+  .brand-name .brand-wordmark{ display:block; font-weight:700; font-size:14px; letter-spacing:0.5px; }
+  .brand-name .brand-wordmark .w-sago{ color:var(--accent); }
+  .brand-name .brand-wordmark .w-chem{ color:var(--brand-blue); }
+  .brand-name .brand-tagline{ display:block; font-weight:400; font-size:11px; color:var(--brand-blue); letter-spacing:0.3px; }
+  .hotline-cta{
+    display:flex; align-items:center; gap:var(--space-2);
+    background:var(--accent); color:#fff;
+    padding:var(--space-2) var(--space-4);
+    border-radius:var(--radius-sm);
+    font-weight:700; letter-spacing:1px; text-transform:uppercase; font-size:14px;
+    transition:background-color 0.2s;
+  }
+  .hotline-cta:hover{ background:var(--accent-dark); }
+
+  /* Nav */
+  nav.site{ background:var(--accent); }
+  nav.site .wrap{
+    display:flex; gap:var(--space-5); flex-wrap:wrap;
+    padding:var(--space-3) var(--space-4);
+  }
+  nav.site a{
+    color:#fff; font-weight:600; font-size:14px; text-transform:uppercase; letter-spacing:0.5px;
+    padding-bottom:var(--space-1);
+    border-bottom:2px solid transparent;
+  }
+  nav.site a:hover{ border-bottom-color:#fff; }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg, var(--hero-bg) 0%, #184a6e 100%);
+    color:#fff;
+    padding:var(--space-6) 0;
+  }
+  .hero .wrap{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:var(--space-6); align-items:center; }
+  .hero h1{ font-size:28px; font-weight:600; line-height:1.3; margin-bottom:var(--space-3); }
+  .hero h1 span{ color:var(--accent); }
+  .hero p{ font-size:16px; color:#d8dee2; margin-bottom:var(--space-4); max-width:52ch; }
+  .hero-badges{ display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-5); }
+  .hero-badge{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    padding:var(--space-2) var(--space-3);
+    border-radius:var(--radius-sm);
+    font-size:13px; color:#e7ecef;
+  }
+  .hero-ctas{ display:flex; gap:var(--space-3); flex-wrap:wrap; }
+  .btn{
+    display:inline-block;
+    padding:var(--space-3) var(--space-4);
+    border-radius:var(--radius-sm);
+    font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:1px;
+    transition:background-color 0.2s, opacity 0.2s;
+  }
+  .btn-accent{ background:var(--accent); color:#fff; }
+  .btn-accent:hover{ background:var(--accent-dark); }
+  .btn-outline{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.5); }
+  .btn-outline:hover{ opacity:0.85; }
+  .hero-visual{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius-card);
+    padding:var(--space-5);
+  }
+  .hero-visual h3{ font-size:14px; text-transform:uppercase; letter-spacing:1px; color:var(--accent); margin-bottom:var(--space-3); }
+  .hero-visual ul li{ padding:var(--space-2) 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:14px; color:#dfe4e7; display:flex; justify-content:space-between; }
+  .hero-visual ul li:last-child{ border-bottom:none; }
+
+  /* Section heading pattern (left-aligned + accent underline) */
+  .section{ padding:var(--space-6) 0; }
+  .section.alt{ background:var(--section-alt); }
+  .section.alt2{ background:var(--section-alt-2); }
+  .section-head{ margin-bottom:var(--space-5); }
+  .section-head h2{ font-size:21px; font-weight:600; color:var(--text); display:inline-block; padding-bottom:var(--space-2); border-bottom:3px solid var(--accent); }
+  .section-head p{ margin-top:var(--space-3); color:var(--text-muted); max-width:70ch; }
+
+  /* Product cards — one repeating card shape (system trade-off) */
+  .grid-products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:var(--space-4);
+  }
+  .card{
+    background:#fff;
+    border-radius:var(--radius-card);
+    box-shadow:var(--shadow-card);
+    overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .card-icon{
+    height:120px;
+    background:var(--section-alt-2);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--accent);
+  }
+  .card-icon svg{ width:48px; height:48px; }
+  .card-body{ padding:var(--space-4); display:flex; flex-direction:column; gap:var(--space-2); flex:1; }
+  .card-body h3{ font-size:16px; font-weight:600; color:var(--text); }
+  .card-body p{ font-size:13px; color:var(--text-muted); line-height:1.5; flex:1; }
+  .card-btn{
+    margin-top:var(--space-2);
+    text-align:center;
+    background:var(--accent); color:#fff;
+    padding:var(--space-2) 0;
+    border-radius:var(--radius-sm);
+    font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:1px;
+    transition:background-color 0.2s;
+  }
+  .card-btn:hover{ background:var(--accent-dark); }
+  .card.highlight{ border:2px solid var(--accent); }
+  .ribbon{
+    background:var(--accent); color:#fff; font-size:11px; font-weight:700;
+    text-transform:uppercase; letter-spacing:1px;
+    padding:3px var(--space-2); position:absolute; margin:var(--space-2);
+    border-radius:var(--radius-sm);
+  }
+  .card-icon{ position:relative; }
+
+  /* Why choose us — icon + heading + paragraph, flat (no shadow) per one-tier depth */
+  .grid-features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:var(--space-5);
+  }
+  .feature{ display:flex; gap:var(--space-3); align-items:flex-start; }
+  .feature-icon{
+    width:44px; height:44px; flex:0 0 44px;
+    border-radius:50%;
+    background:var(--brand-blue); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .feature-icon svg{ width:22px; height:22px; }
+  .feature h3{ font-size:15px; font-weight:600; margin-bottom:var(--space-1); color:var(--text); }
+  .feature p{ font-size:13px; color:var(--text-muted); line-height:1.5; }
+
+  /* CTA band */
+  .cta-band{
+    background:var(--accent);
+    color:#fff;
+    padding:var(--space-5) 0;
+  }
+  .cta-band .wrap{ display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); flex-wrap:wrap; }
+  .cta-band h2{ font-size:19px; font-weight:600; }
+  .cta-band p{ font-size:14px; opacity:0.95; margin-top:var(--space-1); }
+  .cta-actions{ display:flex; gap:var(--space-3); flex-wrap:wrap; }
+  .btn-white{ background:#fff; color:var(--accent-dark); }
+  .btn-white:hover{ background:#f1f1f1; }
+  .btn-ghost{ border:1px solid rgba(255,255,255,0.6); color:#fff; }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.1); }
+
+  /* Footer */
+  footer.site{ background:var(--footer-bg); color:#c9d1d6; padding:var(--space-6) 0 var(--space-4); }
+  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:var(--space-5); }
+  .footer-grid h4{ color:#fff; font-size:14px; font-weight:600; margin-bottom:var(--space-3); text-transform:uppercase; letter-spacing:0.5px; }
+  .footer-grid p, .footer-grid a{ font-size:13px; color:#a9b4bb; line-height:1.8; }
+  .footer-grid a:hover{ color:var(--accent); }
+  .footer-bottom{
+    margin-top:var(--space-5); padding-top:var(--space-3);
+    border-top:1px solid rgba(255,255,255,0.08);
+    font-size:12px; color:#7d8992;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:var(--space-2);
+  }
+
+  /* Floating hotline badge — contact-urgency principle, persists across scroll */
+  .float-hotline{
+    position:fixed; left:0; bottom:24px; z-index:50;
+    background:var(--accent); color:#fff;
+    padding:var(--space-2) var(--space-4) var(--space-2) var(--space-3);
+    border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+    display:flex; align-items:center; gap:var(--space-2);
+    font-weight:700; font-size:13px;
+    box-shadow:var(--shadow-card);
+  }
+  .float-hotline svg{ width:18px; height:18px; }
+
+  /* Quote request form — flat chrome (shadow-flat), not sellable so no shadow-card */
+  .quote-card{
+    background:#fff;
+    border-radius:var(--radius-card);
+    box-shadow:var(--shadow-flat);
+    padding:var(--space-5);
+    max-width:720px;
+    margin:0 auto;
+  }
+  .quote-field{ margin-bottom:var(--space-4); }
+  .quote-field label{ display:block; font-size:13px; font-weight:600; margin-bottom:var(--space-1); color:var(--text); }
+  .quote-field .quote-hint{ font-weight:400; color:var(--text-muted-2); font-size:12px; }
+  .quote-field input[type=text], .quote-field input[type=tel], .quote-field input[type=email], .quote-field select, .quote-field textarea{
+    width:100%;
+    font-family:inherit;
+    font-size:14.5px;
+    padding:var(--space-2) var(--space-3);
+    border:1px solid #E0E0E0;
+    border-radius:var(--radius-sm);
+    background:#fff;
+    color:var(--text);
+  }
+  .quote-field textarea{ resize:vertical; min-height:70px; }
+  .quote-row{ display:flex; gap:var(--space-3); }
+  .quote-row .quote-field{ flex:1; }
+  .quote-chip-grid{ display:flex; flex-wrap:wrap; gap:var(--space-2); }
+  .quote-chip{
+    display:flex; align-items:center; gap:7px;
+    border:1px solid #E0E0E0;
+    border-radius:var(--radius-sm);
+    padding:8px 12px;
+    font-size:13.5px;
+    cursor:pointer;
+    background:#fff;
+    flex:1 1 46%;
+  }
+  .quote-chip.checked{ border-color:var(--accent); background:#FFF6EE; }
+  .quote-chip input{ width:auto; margin:0; }
+  .quote-required{ color:#D64545; }
+  .quote-err{ color:#D64545; font-size:12.5px; margin-top:var(--space-3); display:none; }
+  .quote-done{ text-align:center; }
+  .quote-done .quote-done-icon{ font-size:36px; margin-bottom:var(--space-1); }
+  .quote-done h3{ font-size:17px; font-weight:600; margin-bottom:var(--space-1); }
+  .quote-done p{ font-size:13px; color:var(--text-muted); margin-bottom:var(--space-4); }
+  .quote-done-actions{ display:flex; flex-direction:column; gap:var(--space-2); max-width:360px; margin:0 auto; }
+  .quote-done-actions a, .quote-done-actions button{
+    display:block; text-align:center; border:none; cursor:pointer;
+    padding:var(--space-3) var(--space-4); border-radius:var(--radius-sm);
+    font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px;
+    font-family:inherit;
+  }
+  .qd-zalo{ background:#0068FF; color:#fff; }
+  .qd-mail{ background:var(--accent); color:#fff; }
+  .qd-tel{ background:var(--footer-bg); color:#fff; }
+  .qd-again{ background:var(--section-alt-2); color:var(--text); border:1px solid #E0E0E0 !important; text-transform:none; letter-spacing:normal; }
+
+  /* Quote popup — hidden until "Nhận báo giá" is clicked */
+  .quote-banner{ text-align:center; }
+  .quote-banner p{ color:var(--text-muted); max-width:60ch; margin:0 auto var(--space-4); }
+  .modal-backdrop{
+    display:none;
+    position:fixed; inset:0;
+    background:rgba(0,0,0,0.45);
+    align-items:center; justify-content:center;
+    z-index:200;
+    padding:20px;
+  }
+  .modal-backdrop.open{ display:flex; }
+  .modal-backdrop .quote-card{ width:720px; max-height:90vh; overflow-y:auto; position:relative; }
+  .modal-close{
+    position:absolute; top:14px; right:14px;
+    width:32px; height:32px; border-radius:50%;
+    background:var(--section-alt-2); border:none;
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px; line-height:1; color:var(--text-muted);
+    cursor:pointer;
+  }
+  .modal-close:hover{ background:#e5e5e5; }
+
+  @media (max-width: 860px){
+    .hero .wrap{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+    nav.site .wrap{ gap:var(--space-3); }
+  }
+  @media (max-width: 520px){
+    .quote-row{ flex-direction:column; gap:0; }
+    .quote-chip{ flex:1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span>Chuyên cung cấp hóa chất công nghiệp cơ bản &amp; Sorbitol cho ngành thực phẩm - dược phẩm</span>
+      <a href="mailto:tuyen.dinh@sagochem.com">tuyen.dinh@sagochem.com</a>
+    </div>
+  </div>
+
+  <header class="site">
+    <div class="wrap">
+      <div class="brand">
+        <div class="brand-mark">SG</div>
+        <div class="brand-name">
+          Công ty Cổ phần Công nghiệp Hóa chất Sài Gòn
+          <span class="brand-wordmark"><span class="w-sago">SAGO</span><span class="w-chem">CHEM</span></span>
+          <span class="brand-tagline">Sustainable Chemistry &amp; Innovation</span>
+        </div>
+      </div>
+      <a class="hotline-cta" href="tel:0949691556">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Hotline: 0949 691 556
+      </a>
+    </div>
+  </header>
+
+  <nav class="site">
+    <div class="wrap">
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="#sorbitol">Sorbitol</a>
+      <a href="#tai-sao">Tại sao chọn Sagochem</a>
+      <a href="#" onclick="openQuoteModal();return false;">Nhận báo giá</a>
+      <a href="#lien-he">Liên hệ</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="gioi-thieu">
+    <div class="wrap">
+      <div>
+        <h1>Hóa chất công nghiệp cơ bản &amp; <span>Sorbitol</span><br>ổn định nguồn hàng, giao đúng tiến độ</h1>
+        <p>Sagochem cung cấp Xút, Axit, PAC, Phèn, Clo lỏng/Javel cho xử lý nước &amp; sản xuất công nghiệp, cùng Sorbitol và phụ gia thực phẩm - dược phẩm cho nhà máy chế biến. Một đầu mối, nhiều nhóm hàng.</p>
+        <div class="hero-badges">
+          <span class="hero-badge">Giao hàng theo lô lớn / hợp đồng dài hạn</span>
+          <span class="hero-badge">Tư vấn nồng độ &amp; quy cách theo yêu cầu</span>
+        </div>
+        <div class="hero-ctas">
+          <button class="btn btn-accent" type="button" onclick="openQuoteModal()" style="border:none;cursor:pointer;font-family:inherit;">Nhận báo giá</button>
+          <a class="btn btn-outline" href="tel:0949691556">Gọi ngay</a>
+          <a class="btn btn-outline" href="#san-pham">Xem sản phẩm</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <h3>Nhóm hàng chủ lực</h3>
+        <ul>
+          <li><span>Xút (NaOH)</span><span>32% - 45% - 50%</span></li>
+          <li><span>Axit Clohydric / Sunfuric</span><span>HCl - H2SO4</span></li>
+          <li><span>PAC &amp; Phèn</span><span>keo tụ xử lý nước</span></li>
+          <li><span>Clo lỏng / Javel</span><span>khử trùng</span></li>
+          <li><span>Sorbitol &amp; phụ gia TP</span><span>thực phẩm - dược phẩm</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="san-pham">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Sản phẩm của chúng tôi</h2>
+        <p>Mỗi nhóm hàng đi kèm tư vấn nồng độ, quy cách đóng gói và điều kiện vận chuyển phù hợp với ngành sử dụng.</p>
+      </div>
+      <div class="grid-products">
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6M10 2v6.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V2"/><path d="M7 15h10"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Xút (NaOH)</h3>
+            <p>Dạng lỏng và rắn, nồng độ 32% - 45% - 50%, phục vụ dệt nhuộm, giấy, xử lý nước và sản xuất hóa chất sau.</p>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="13" r="8"/><path d="M12 5V3M9 3h6"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Axit Clohydric &amp; Sunfuric</h3>
+            <p>HCl và H2SO4 công nghiệp, dùng trong xử lý bề mặt, trung hòa nước thải và sản xuất hóa chất.</p>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 12a8 4 0 0 0 16 0M4 12a8 4 0 0 1 16 0"/><path d="M4 6a8 4 0 0 0 16 0"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>PAC &amp; Phèn đơn</h3>
+            <p>Chất keo tụ cho xử lý nước cấp, nước thải sinh hoạt và công nghiệp, ổn định độ đục nhanh.</p>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C9 6 6 9.5 6 13a6 6 0 0 0 12 0c0-3.5-3-7-6-11z"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Clo lỏng &amp; Javel</h3>
+            <p>Giải pháp khử trùng cho nhà máy nước, hồ bơi và xử lý nước thải, nồng độ theo yêu cầu.</p>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card highlight" id="sorbitol" style="position:relative;">
+          <div class="card-icon">
+            <span class="ribbon">Nhóm thực phẩm - dược</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-4-3-8-6.5-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 4.5-4 8-8 11z"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Sorbitol</h3>
+            <p>Dạng lỏng (70%) và bột, dùng làm chất tạo ngọt, giữ ẩm trong thực phẩm, bánh kẹo, kem đánh răng và dược phẩm.</p>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19V9l4-4 4 4v10M14 19v-6h4v6"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Phụ gia thực phẩm khác</h3>
+            <p>Danh mục phụ gia đi kèm Sorbitol theo yêu cầu nhà máy chế biến thực phẩm và dược phẩm.</p>
+            <a class="card-btn" href="tel:0949691556">Liên hệ báo giá</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="tai-sao">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Tại sao chọn Sagochem</h2>
+      </div>
+      <div class="grid-features">
+
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M9 13h1M9 17h1M14 9h1M14 13h1M14 17h1"/></svg>
+          </div>
+          <div>
+            <h3>Một đầu mối, nhiều nhóm hàng</h3>
+            <p>Từ hóa chất xử lý nước đến phụ gia thực phẩm - dược phẩm, khách hàng không cần làm việc với nhiều nhà cung cấp.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H5M3 7l3-3 3 3M17 17l3-3 3 3"/></svg>
+          </div>
+          <div>
+            <h3>Tư vấn nồng độ &amp; quy cách</h3>
+            <p>Hỗ trợ chọn đúng nồng độ, dạng đóng gói phù hợp với dây chuyền sản xuất của từng khách hàng.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l3-3 3 3 5-6"/></svg>
+          </div>
+          <div>
+            <h3>Ổn định nguồn hàng</h3>
+            <p>Ưu tiên hợp đồng dài hạn và giao hàng theo lô lớn, giảm rủi ro gián đoạn sản xuất cho khách hàng.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h3>Phản hồi báo giá nhanh</h3>
+            <p>Liên hệ trực tiếp qua hotline hoặc email, nhận báo giá và tư vấn trong ngày làm việc.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-backdrop" id="quoteModalBackdrop" onclick="if(event.target===this) closeQuoteModal();">
+
+      <div class="quote-card" id="quoteFormWrap">
+        <button type="button" class="modal-close" onclick="closeQuoteModal()" aria-label="Đóng">&times;</button>
+        <div class="section-head" style="margin-bottom:var(--space-4);">
+          <h2 style="font-size:19px;">Nhận báo giá</h2>
+          <p style="margin-top:var(--space-2);font-size:13px;">Điền nhanh sản phẩm và số lượng cần mua — Sagochem liên hệ tư vấn báo giá trong ngày làm việc.</p>
+        </div>
+        <div class="quote-field">
+          <label>Họ và tên <span class="quote-required">*</span></label>
+          <input type="text" id="q_ten" placeholder="Nguyễn Văn A">
+        </div>
+        <div class="quote-row">
+          <div class="quote-field">
+            <label>Số điện thoại <span class="quote-required">*</span></label>
+            <input type="tel" id="q_dienthoai" placeholder="09xx xxx xxx">
+          </div>
+          <div class="quote-field">
+            <label>Email <span class="quote-hint">(nếu có)</span></label>
+            <input type="email" id="q_email" placeholder="ban@congty.com">
+          </div>
+        </div>
+        <div class="quote-row">
+          <div class="quote-field">
+            <label>Công ty / Đơn vị <span class="quote-hint">(nếu có)</span></label>
+            <input type="text" id="q_congty" placeholder="Công ty TNHH...">
+          </div>
+          <div class="quote-field">
+            <label>Khu vực / Tỉnh thành</label>
+            <input type="text" id="q_khuvuc" placeholder="VD: Bến Tre, TP.HCM...">
+          </div>
+        </div>
+
+        <div class="quote-field">
+          <label>Sản phẩm quan tâm <span class="quote-required">*</span> <span class="quote-hint">(chọn 1 hoặc nhiều)</span></label>
+          <div class="quote-chip-grid" id="quoteProductGrid"></div>
+        </div>
+
+        <div class="quote-row">
+          <div class="quote-field">
+            <label>Số lượng dự kiến</label>
+            <input type="text" id="q_soluong" placeholder="VD: 2 tấn / tháng">
+          </div>
+          <div class="quote-field">
+            <label>Thời gian cần hàng</label>
+            <select id="q_thoigian">
+              <option value="Ngay">Cần ngay / trong tuần này</option>
+              <option value="ThangNay">Trong tháng này</option>
+              <option value="1-3Thang">1–3 tháng tới</option>
+              <option value="ChuaXacDinh" selected>Đang tìm hiểu, chưa xác định</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="quote-field">
+          <label>Ghi chú thêm <span class="quote-hint">(quy cách đóng gói, yêu cầu riêng...)</span></label>
+          <textarea id="q_ghichu"></textarea>
+        </div>
+
+        <div class="quote-err" id="quoteErr"></div>
+        <button class="btn btn-accent" type="button" id="quoteSubmitBtn" style="width:100%;border:none;cursor:pointer;font-family:inherit;">Gửi yêu cầu</button>
+      </div>
+
+      <div class="quote-card quote-done" id="quoteDoneWrap" style="display:none">
+        <button type="button" class="modal-close" onclick="closeQuoteModal()" aria-label="Đóng">&times;</button>
+        <div class="quote-done-icon">✅</div>
+        <h3>Đã ghi nhận nhu cầu của bạn</h3>
+        <p>Để Sagochem nhận được thông tin ngay lập tức, vui lòng chọn 1 cách gửi bên dưới (khuyên dùng Zalo hoặc Email):</p>
+        <div class="quote-done-actions">
+          <a class="qd-zalo" id="qdZalo" href="#" target="_blank" rel="noopener">💬 Gửi qua Zalo (0949 691 556)</a>
+          <a class="qd-mail" id="qdMail" href="#">✉️ Gửi qua Email</a>
+          <a class="qd-tel" href="tel:0949691556">📞 Gọi hotline 0949 691 556</a>
+          <button class="qd-again" id="qdAgain">Điền yêu cầu khác</button>
+        </div>
+      </div>
+
+  </div>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Cần báo giá Xút, Axit, PAC, Sorbitol hoặc phụ gia thực phẩm?</h2>
+        <p>Gọi hotline hoặc gửi email — Sagochem phản hồi trong ngày làm việc.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-white" href="tel:0949691556">Gọi 0949 691 556</a>
+        <a class="btn btn-ghost" href="mailto:tuyen.dinh@sagochem.com?subject=Y%C3%AAu%20c%E1%BA%A7u%20b%C3%A1o%20gi%C3%A1">Gửi email báo giá</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site" id="lien-he">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h4>Sagochem</h4>
+          <p>Công ty Cổ phần Công nghiệp Hóa chất Sài Gòn — chuyên cung cấp hóa chất công nghiệp cơ bản và Sorbitol cho ngành xử lý nước, sản xuất và thực phẩm - dược phẩm.</p>
+        </div>
+        <div>
+          <h4>Danh mục</h4>
+          <p><a href="#gioi-thieu">Giới thiệu</a></p>
+          <p><a href="#san-pham">Sản phẩm</a></p>
+          <p><a href="#sorbitol">Sorbitol</a></p>
+          <p><a href="#tai-sao">Tại sao chọn Sagochem</a></p>
+          <p><a href="#" onclick="openQuoteModal();return false;">Nhận báo giá</a></p>
+        </div>
+        <div>
+          <h4>Liên hệ</h4>
+          <p>Hotline: <a href="tel:0949691556">0949 691 556</a></p>
+          <p>Email: <a href="mailto:tuyen.dinh@sagochem.com">tuyen.dinh@sagochem.com</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Công ty Cổ phần Công nghiệp Hóa chất Sài Gòn (Sagochem). All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-hotline" href="tel:0949691556">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Hotline: 0949 691 556
+  </a>
+
+<script>
+(function(){
+  var STORAGE_KEY = "dqt_crm_data_v1"; // dùng chung với ứng dụng CRM nội bộ (nếu mở trên cùng thiết bị)
+  var HOTLINE = "0949691556";
+  var EMAIL = "tuyen.dinh@sagochem.com";
+
+  var PRODUCTS = [
+    "Xút (NaOH) dạng lỏng","Xút (NaOH) dạng rắn",
+    "Axit Clohydric (HCl)","Axit Sunfuric (H2SO4)",
+    "PAC","Phèn đơn","Clo lỏng","Javel",
+    "Sorbitol lỏng 70%","Sorbitol bột","Tinh bột biến tính",
+    "Phụ gia thực phẩm khác","Khác / chưa rõ tên sản phẩm"
+  ];
+
+  window.openQuoteModal = function(){
+    document.getElementById("quoteModalBackdrop").classList.add("open");
+    document.body.style.overflow = "hidden";
+  };
+  window.closeQuoteModal = function(){
+    document.getElementById("quoteModalBackdrop").classList.remove("open");
+    document.body.style.overflow = "";
+  };
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape") closeQuoteModal();
+  });
+  var THOIGIAN_LABEL = {
+    Ngay:"Cần ngay / trong tuần này", ThangNay:"Trong tháng này",
+    "1-3Thang":"1–3 tháng tới", ChuaXacDinh:"Đang tìm hiểu, chưa xác định"
+  };
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+
+  var grid = document.getElementById("quoteProductGrid");
+  PRODUCTS.forEach(function(p, i){
+    var id = "qprod_" + i;
+    var wrap = document.createElement("label");
+    wrap.className = "quote-chip";
+    wrap.setAttribute("for", id);
+    wrap.innerHTML = '<input type="checkbox" id="' + id + '" value="' + esc(p) + '"><span>' + esc(p) + '</span>';
+    var input = wrap.querySelector("input");
+    input.addEventListener("change", function(){ wrap.classList.toggle("checked", input.checked); });
+    grid.appendChild(wrap);
+  });
+
+  function getSelectedProducts(){
+    return Array.prototype.slice.call(grid.querySelectorAll("input:checked")).map(function(i){ return i.value; });
+  }
+
+  document.getElementById("quoteSubmitBtn").onclick = function(){
+    var ten = document.getElementById("q_ten").value.trim();
+    var dienthoai = document.getElementById("q_dienthoai").value.trim();
+    var email = document.getElementById("q_email").value.trim();
+    var congty = document.getElementById("q_congty").value.trim();
+    var khuvuc = document.getElementById("q_khuvuc").value.trim();
+    var products = getSelectedProducts();
+    var soluong = document.getElementById("q_soluong").value.trim();
+    var thoigian = document.getElementById("q_thoigian").value;
+    var ghichu = document.getElementById("q_ghichu").value.trim();
+
+    var errEl = document.getElementById("quoteErr");
+    if (!ten || !dienthoai || products.length === 0){
+      errEl.textContent = "Vui lòng nhập Họ tên, Số điện thoại và chọn ít nhất 1 sản phẩm quan tâm.";
+      errEl.style.display = "block";
+      return;
+    }
+    errEl.style.display = "none";
+
+    var ghichuParts = [];
+    if (congty) ghichuParts.push("Công ty/Đơn vị: " + congty);
+    if (khuvuc) ghichuParts.push("Khu vực: " + khuvuc);
+    ghichuParts.push("Sản phẩm quan tâm: " + products.join(", "));
+    if (soluong) ghichuParts.push("Số lượng dự kiến: " + soluong);
+    ghichuParts.push("Thời gian cần hàng: " + THOIGIAN_LABEL[thoigian]);
+    if (ghichu) ghichuParts.push("Ghi chú: " + ghichu);
+    if (email) ghichuParts.push("Email: " + email);
+
+    var now = new Date().toISOString();
+    var record = {
+      id: uid(), ten: ten, mang: "Sagochem", trangthai: "Moi", giatri: 0,
+      lienhe: dienthoai + (email ? " / " + email : ""),
+      ghichu: ghichuParts.join("\n"),
+      taolap: now, capnhat: now, tang: "Pheu",
+      explicit: { chucdanh:"", ngansach:"", khuvuc:"" }, hanhvi: [],
+      lichsu_tang: [{ tang:"Pheu", ngay: now }]
+    };
+    try {
+      var data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      data.push(record);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    } catch(e) {}
+
+    var summaryLines = [
+      "Yêu cầu báo giá từ website Sagochem",
+      "Họ tên: " + ten,
+      "Điện thoại: " + dienthoai,
+      email ? "Email: " + email : null,
+      congty ? "Công ty/Đơn vị: " + congty : null,
+      khuvuc ? "Khu vực: " + khuvuc : null,
+      "Sản phẩm quan tâm: " + products.join(", "),
+      soluong ? "Số lượng dự kiến: " + soluong : null,
+      "Thời gian cần hàng: " + THOIGIAN_LABEL[thoigian],
+      ghichu ? "Ghi chú: " + ghichu : null
+    ].filter(Boolean).join("\n");
+
+    var btnZalo = document.getElementById("qdZalo");
+    btnZalo.href = "https://zalo.me/" + HOTLINE;
+    btnZalo.onclick = function(){
+      if (navigator.clipboard) navigator.clipboard.writeText(summaryLines).catch(function(){});
+      alert("Đã sao chép nội dung yêu cầu. Vui lòng dán (paste) vào khung chat Zalo với Sagochem sau khi mở.");
+    };
+    var btnMail = document.getElementById("qdMail");
+    btnMail.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Yêu cầu báo giá - " + ten)
+      + "&body=" + encodeURIComponent(summaryLines);
+
+    document.getElementById("quoteFormWrap").style.display = "none";
+    document.getElementById("quoteDoneWrap").style.display = "block";
+  };
+
+  document.getElementById("qdAgain").onclick = function(){
+    document.getElementById("q_ten").value = "";
+    document.getElementById("q_dienthoai").value = "";
+    document.getElementById("q_email").value = "";
+    document.getElementById("q_congty").value = "";
+    document.getElementById("q_khuvuc").value = "";
+    document.getElementById("q_soluong").value = "";
+    document.getElementById("q_thoigian").value = "ChuaXacDinh";
+    document.getElementById("q_ghichu").value = "";
+    Array.prototype.slice.call(grid.querySelectorAll("input:checked")).forEach(function(i){
+      i.checked = false; i.closest(".quote-chip").classList.remove("checked");
+    });
+    document.getElementById("quoteDoneWrap").style.display = "none";
+    document.getElementById("quoteFormWrap").style.display = "block";
+  };
+})();
+</script>
+
+</body>
+</html>
