@@ -9,5 +9,5 @@ https://a2zship.github.io/Sagochem-site/ (chữ S hoa — trùng tên repo GitHu
 Tự động qua GitHub Actions — mỗi lần push lên nhánh `main` sẽ tự deploy lại trang.
 
 ## Liên hệ
-- Hotline: 0949 691 556
-- Email: tuyen.dinh@sagochem.com
+- Hotline: 0921 058 448
+- Email: contact@sagochem.com
