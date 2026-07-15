@@ -687,6 +687,8 @@
   var STORAGE_KEY = "dqt_crm_data_v1"; // dùng chung với ứng dụng CRM nội bộ (nếu mở trên cùng thiết bị)
   var HOTLINE = "0949691556";
   var EMAIL = "tuyen.dinh@sagochem.com";
+  // Sau khi triển khai Google Apps Script (xem HuongDan_LuuLead_GoogleSheet.md), DÁN URL Web App vào giữa 2 dấu nháy:
+  var LEAD_ENDPOINT = 'PASTE_APPS_SCRIPT_WEB_APP_URL_HERE';
 
   var PRODUCTS = [
     "Xút (NaOH) dạng lỏng","Xút (NaOH) dạng rắn",
@@ -773,6 +775,22 @@
       data.push(record);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     } catch(e) {}
+
+    var leadConfigured = LEAD_ENDPOINT.indexOf("http") === 0;
+    if (leadConfigured){
+      // Gửi vào Google Sheet (fire-and-forget, không cần đọc phản hồi)
+      fetch(LEAD_ENDPOINT, {
+        method: "POST", mode: "no-cors",
+        headers: {"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
+        body: new URLSearchParams({
+          name: ten, phone: dienthoai, email: email,
+          company: congty, region: khuvuc,
+          products: products.join(", "), quantity: soluong,
+          timing: THOIGIAN_LABEL[thoigian], note: ghichu,
+          source: "Website Sagochem - Nhận báo giá"
+        }).toString()
+      }).catch(function(){});
+    }
 
     var summaryLines = [
       "Yêu cầu báo giá từ website Sagochem",
